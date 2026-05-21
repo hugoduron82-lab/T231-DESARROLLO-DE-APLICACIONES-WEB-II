@@ -33,7 +33,7 @@ const RegistroGasto: React.FC = () => {
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-md mb-6">
-      <h3 className="text-xl font-semibold mb-4">Registrar nuevo gasto</h3>
+      <h3 className="text-xl font-semibold mb-4 text-gray-800">Registrar nuevo gasto</h3>
       {mensajeExito && <p className="text-green-600 mb-2">{mensajeExito}</p>}
       {error && <p className="text-red-600 mb-2">{error}</p>}
       <form onSubmit={manejarSubmit} className="space-y-4">
@@ -42,7 +42,7 @@ const RegistroGasto: React.FC = () => {
           <input
             type="text"
             list="categorias"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md text-gray-900"
             value={categoria}
             onChange={(e) => setCategoria(e.target.value)}
             required
@@ -59,7 +59,7 @@ const RegistroGasto: React.FC = () => {
           <input
             type="number"
             step="0.01"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md text-gray-900"
             value={monto}
             onChange={(e) => setMonto(e.target.value)}
             required
@@ -69,7 +69,7 @@ const RegistroGasto: React.FC = () => {
           <label className="block text-gray-700 mb-1">Fecha *</label>
           <input
             type="date"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md text-gray-900"
             value={fecha}
             onChange={(e) => setFecha(e.target.value)}
             required

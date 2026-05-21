@@ -16,13 +16,13 @@ const LoginForm: React.FC = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-md w-96">
-        <h2 className="text-2xl font-bold mb-6 text-center">Inicio de Sesión</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Inicio de Sesión</h2>
         <form onSubmit={manejarSubmit}>
           <div className="mb-4">
             <label className="block text-gray-700 mb-2">Usuario</label>
             <input
               type="text"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
               value={usuario}
               onChange={(e) => setUsuario(e.target.value)}
               required
@@ -32,7 +32,7 @@ const LoginForm: React.FC = () => {
             <label className="block text-gray-700 mb-2">Contraseña</label>
             <input
               type="password"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
               value={clave}
               onChange={(e) => setClave(e.target.value)}
               required
