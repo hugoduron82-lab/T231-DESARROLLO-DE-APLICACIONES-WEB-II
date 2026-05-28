@@ -6,6 +6,8 @@ const app = express();
 
 app.use(express.json());
 
+//Get de todos los productos
+
 app.get('/productos', async (req, res) => {
     try {
         const productos = await Product_v6.findAll();
@@ -16,11 +18,9 @@ app.get('/productos', async (req, res) => {
 });
 
 
-/* 8. Valor total de productos por productType
+// Valor total de productos por productType
+//SELECT productType, SUM(value) AS valor_total FROM Product_v6 GROUP BY productType;*/
 
-SELECT productType, SUM(value) AS valor_total FROM Product_v6 GROUP BY productType;*/
-
-// GET /valor-total-por-tipo
 app.get('/valor-total-por-tipo', async (req, res) => {
     try {
         const resultado = await Product_v6.findAll({
@@ -37,7 +37,7 @@ app.get('/valor-total-por-tipo', async (req, res) => {
 });
 
 
-// 9. Valor máximo y mínimo por productType
+// Valor máximo y mínimo por productType
 // SELECT productType, MAX(value) AS valor_maximo, MIN(value) AS valor_minimo FROM Product_v6 GROUP BY productType;
 
 app.get('/min-max-por-tipo', async (req, res) => {
@@ -56,7 +56,7 @@ app.get('/min-max-por-tipo', async (req, res) => {
     }
 });
 
-// 11. Contar productos por status
+// Contar productos por status
 // SELECT status, COUNT(*) AS cantidad FROM Product_v6 GROUP BY status;
 
 app.get('/conteo-por-status', async (req, res) => {
@@ -74,8 +74,7 @@ app.get('/conteo-por-status', async (req, res) => {
     }
 });
 
-
-// 12. Valor total de productos por brand.code
+// Valor total de productos por brand.code
 // SELECT brandCode, SUM(value) AS valor_total FROM Product_v6 GROUP BY brandCode;
 
 app.get('/valor-total-por-marca', async (req, res) => {
